@@ -1,7 +1,9 @@
-import Project from "@/models/Project";
 import type {NextApiRequest,NextApiResponse} from "next";
+import {connectDatabase} from "@/lib/DB";
+import Project from "@/models/Project";
 
 export default async function handler(req:NextApiRequest,res:NextApiResponse){
+    await connectDatabase();
     const xAccessToken = req.headers["x-access-token"];
   
     if(req.method !== "GET"){
