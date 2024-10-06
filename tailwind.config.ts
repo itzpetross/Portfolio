@@ -8,12 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      colors:{
+        primary:"#fff", //#fff
+        secondary:"#f8fafb", //#fff
+        theme:"#23b8ed"//#a358fd
+      },
+      fontFamily:{
+        SpaceGrotesk:"Space Grotesk"
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-dotted-background')],
 };
 export default config;

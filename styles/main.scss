@@ -1,0 +1,19 @@
+::-webkit-scrollbar{
+  width: 5px;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#23b8ed;
+  border-radius: 1rem;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
