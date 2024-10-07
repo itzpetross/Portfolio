@@ -72,7 +72,7 @@ export default function Menu(){
                             <Link href="/">
                                 <div className="flex">
                                     <Image src={Icon} alt="Avatar" className="w-[35px]"/>
-                                    <p className="font-bold uppercase my-auto ml-3 hidden sm:block">Petr <span className="text-theme">Valeška</span></p>
+                                    <p className="font-bold uppercase my-auto ml-3 hidden sm:block">Petr <span className="text-theme">Kuchař</span></p>
                                 </div>
                             </Link>
                         </div>

@@ -59,6 +59,10 @@ export default function Schowcase(){
                 ))}
             </div>
 
+            {!isLoading && projects.length === 0? (
+                <h2 className="text-center text-[25px]">Aktuálně zde nic není...</h2>
+            ):null}
+
             {isLoading? (
                 <Loader/>
             ):null}

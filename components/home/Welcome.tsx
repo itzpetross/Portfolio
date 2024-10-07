@@ -17,8 +17,8 @@ export default function Welcome(){
 
                     <div className="flex-col my-auto">
                         <motion.div className="my-auto" initial={{opacity:0,x:100}} animate={{opacity:1,x:0}} transition={{duration:2}}>
-                            <h1 className="text-[3em] text-center font-black mb-6 lg:text-[4.5em]">Petr <span className="text-theme">Valeška</span></h1>
-                            <p className="text-center text-[18px] text-slate-900 font-regular mb-[40px]">Jmenuji se <span className="text-theme">Petr Valeška</span>, na internetu vystupuji pod svojí přezdívkou <span className="text-theme">Kangy</span>. Je mi 16 let a studuji obor <span className="text-theme">Elektrotechnika</span> na <span className="text-theme">střední škole technické</span>. <span className="text-theme">Vývoji</span> webových stránek se věnuji již <span className="text-theme">čtvrtým rokem</span> a stále rád získávám nové zkušenosti.</p>
+                            <h1 className="text-[3em] text-center font-black mb-6 lg:text-[4.5em]">Petr <span className="text-theme">Kuchař</span></h1>
+                            <p className="text-center text-[18px] text-slate-900 font-regular mb-[40px]">Jmenuji se <span className="text-theme">Petr Kuchař</span>, na internetu vystupuji pod svojí přezdívkou <span className="text-theme">Petross</span>. Je mi 16 let a studuji obor <span className="text-theme">Elektrotechnika</span> na <span className="text-theme">střední škole technické</span>. <span className="text-theme">Vývoji</span> webových stránek se věnuji již <span className="text-theme">čtvrtým rokem</span> a stále rád získávám nové zkušenosti.</p>
                             
                             <div className="flex flex-wrap justify-center gap-3 md:gap-6">
                                 <button onClick={()=>window.open("/kontakt","_self")} className="text-white uppercase font-bold w-full py-2 px-8 rounded-sm bg-theme block select-none transition ease-in-out duration-[.40s] hover:bg-theme hover:text-white md:w-auto">

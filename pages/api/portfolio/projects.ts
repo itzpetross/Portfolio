@@ -13,41 +13,48 @@ export default async function handler(req:NextApiRequest,res:NextApiResponse){
                 message: "Jiná metoda než GET není povolena!"
             }
         });
-  }else if(!xAccessToken){
-    return res.status(403).json({
-        details:{
-            status: "403 - Forbidden",
-            message: "Hlavička requestu musí obsahovat AccessToken!"
-        }
-    })
-  }
-
-  try{
-    const projects = await Project.find();
-
-    if(projects.length < 0){
-        return res.status(201).json({
+    }else if(!xAccessToken){
+        return res.status(403).json({
             details:{
-                status: "201 - No Content",
-                message: "V databázi se nenachází žádný projekt!"
+                status: "403 - Forbidden",
+                message: "Hlavička requestu musí obsahovat AccessToken!"
             }
         });
-    }else{
-        return res.status(201).json({
+    }else if(xAccessToken !== process.env.NEXT_PUBLIC_API_TOKEN){
+        return res.status(400).json({
             details:{
-                status: "200 - Success",
-            },
-            data: projects
+                status: "400 - Bad Request",
+                message: "AccessToken uvedený v hlavičce requestu není správný!"
+            }
         });
     }
 
-  }catch(e){
-    console.log(e);
-    return res.status(500).json({
-        details:{
-            status: "500 - Internal Server Error",
-            message: "Někde nastala chyba!"
+    try{
+        const projects = await Project.find();
+
+        if(projects.length < 0){
+            return res.status(201).json({
+                details:{
+                    status: "201 - No Content",
+                    message: "V databázi se nenachází žádný projekt!"
+                }
+            });
+        }else{
+            return res.status(201).json({
+                details:{
+                    status: "200 - Success",
+                },
+                data: projects
+            });
         }
-    });
-  }
+
+    }catch(e){
+        console.log(e);
+        return res.status(500).json({
+            details:{
+                status: "500 - Internal Server Error",
+                message: "Někde nastala chyba!"
+            }
+        });
+    }
 }
